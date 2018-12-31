@@ -3,9 +3,8 @@ const {
 } = require("./stockCalc")
 
 describe('getting max profit', () => {
-    it('should return a number', () => {
-        const result = getMaxProfit()
-        expect(Number.isNaN(result)).toBe(false)
-        expect(typeof result).toBe("number")
+    it('should return an error if parameter is not array of at least length 2', () => {
+        const shortResult = getMaxProfit([0])
+        expect(shortResult).toBe("error, parameter too short")
     })
 })

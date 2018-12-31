@@ -15,6 +15,9 @@ Also, you can't buy and sell in the same time step—at least 1 minute has to pa
 */
 
 const getMaxProfit = function (stockPrices) {
+    if (stockPrices.length < 2) {
+        return "error, parameter too short"
+    }
     return 0;
 }
 
