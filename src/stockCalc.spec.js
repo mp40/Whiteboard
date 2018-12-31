@@ -17,4 +17,7 @@ describe('getting max profit', () => {
     it('should only consider values for sellHigh if after the buyLow time', () => {
         expect(getMaxProfit([15, 7, 5, 8, 11, 9])).toEqual(6)
     })
+    it('should return 0 if the price never exceeds the buyLow value', () => {
+        expect(getMaxProfit([13, 12, 11, 10])).toEqual(0)
+    })
 })
