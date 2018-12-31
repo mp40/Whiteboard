@@ -7,4 +7,8 @@ describe('getting max profit', () => {
         const shortResult = getMaxProfit([0])
         expect(shortResult).toBe("error, parameter too short")
     })
+    it('should return the difference between low of 5 and max of 11', () => {
+        const arrayOfTwo = getMaxProfit([5, 11])
+        expect(arrayOfTwo).toEqual(6)
+    })
 })

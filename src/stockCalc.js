@@ -18,7 +18,10 @@ const getMaxProfit = function (stockPrices) {
     if (stockPrices.length < 2) {
         return "error, parameter too short"
     }
-    return 0;
+    let buyLow = stockPrices[0];
+    let sellHigh = stockPrices[1];
+
+    return sellHigh - buyLow;
 }
 
 module.exports = {
