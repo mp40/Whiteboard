@@ -19,8 +19,18 @@ const getMaxProfit = function (stockPrices) {
         return "error, parameter too short"
     }
     let buyLow = stockPrices[0];
+    let buyIndex = 0;
     let sellHigh = stockPrices[1];
 
+    stockPrices.forEach((val, dex) => {
+        if (val < buyLow) {
+            buyLow = val;
+            buyIndex = dex;
+        }
+        if (val > sellHigh && dex > buyIndex) {
+            sellHigh = val
+        }
+    })
     return sellHigh - buyLow;
 }
 

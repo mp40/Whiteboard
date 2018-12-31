@@ -11,4 +11,10 @@ describe('getting max profit', () => {
         const arrayOfTwo = getMaxProfit([5, 11])
         expect(arrayOfTwo).toEqual(6)
     })
+    it('should calculate arrays of any length', () => {
+        expect(getMaxProfit([10, 7, 5, 8, 11, 9])).toEqual(6)
+    })
+    it('should only consider values for sellHigh if after the buyLow time', () => {
+        expect(getMaxProfit([15, 7, 5, 8, 11, 9])).toEqual(6)
+    })
 })
