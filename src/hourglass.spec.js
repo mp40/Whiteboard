@@ -25,4 +25,14 @@ describe.only('find the biggest sum of hourglass in 6x6 2D array', () => {
         ]
         expect(hourglassSum(secondArray)).toEqual(19)
     })
+    it('should return 13 on third test array which contains negative values', () => {
+        const thirdArray = [
+            [1, 1, 1, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0],
+            [1, 1, 1, 0, 0, 0],
+            [0, 9, 2, -4, -4, 0],
+            [0, 0, 0, -2, 0, 0],
+            [0, 0, -1, -2, -4, 0]
+        ]
+    })
 })
