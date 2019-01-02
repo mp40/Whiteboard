@@ -14,10 +14,13 @@ Print a single line of n space-separated integers denoting the final state of th
 
 const rotateLeft = function (a, d) {
     const splitFirst = a.split(" ");
+    console.log(a)
     let splitSecond = d.split(" ");
 
-    let shifted = splitSecond.shift();
-    splitSecond.push(shifted)
+    for (let i = 0; i < splitFirst[1]; i++) {
+        let shifted = splitSecond.shift();
+        splitSecond.push(shifted)
+    }
 
     return splitSecond.join(" ")
 }
