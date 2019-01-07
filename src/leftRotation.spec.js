@@ -14,6 +14,7 @@ describe.skip('Rotate the array left', () => {
 
 describe('Rotate the array right',()=>{
     it('should rotate the array once',()=>{
-        expect(rotateRight([3,8,9,7,6])).toEqual([6,3,8,9,7])
+        expect(rotateRight([3,8,9,7,6],1)).toEqual([6,3,8,9,7])
+        expect(rotateRight([3,8,9,7,6],3)).toEqual([9,7,6,3,8])
     })
 })

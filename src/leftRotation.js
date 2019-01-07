@@ -26,6 +26,15 @@ const rotateLeft = function (a, d) {
 
 function rotateRight(A, K) {
     // write your code in JavaScript (Node.js 8.9.4)
+    // A = array , K = rotations
+    if(K.length<1){
+        return []
+    }
+    for(let i=0; i<K; i++){
+        let popped = A.pop();
+        A.unshift(popped)
+    }
+    return A
 }
 
 
