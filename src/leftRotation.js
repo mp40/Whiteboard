@@ -24,6 +24,12 @@ const rotateLeft = function (a, d) {
     return splitSecond.join(" ")
 }
 
+function rotateRight(A, K) {
+    // write your code in JavaScript (Node.js 8.9.4)
+}
+
+
 module.exports = {
-    rotateLeft
+    rotateLeft,
+    rotateRight
 }
