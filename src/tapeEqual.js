@@ -23,8 +23,6 @@ function solution(A) {
         sum += A[i];
         if (split(A[i],A.length)){
             result = findResult(calculateDiff(sum,total),result) 
-            // let temp = calculateDiff(sum,total)
-            // result === undefined || result > temp ? result = temp : result = result 
         }
     }
     return result
