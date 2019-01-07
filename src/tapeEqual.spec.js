@@ -1,4 +1,4 @@
-const {solution, split} = require('./tapeEqual')
+const {solution, split, calculateDiff} = require('./tapeEqual')
 
 describe('tape equilibrium problem',()=>{
     const testArray = [3,1,2,4,3]
@@ -8,7 +8,12 @@ describe('tape equilibrium problem',()=>{
         expect(split(-1,3)).toEqual(false)
         expect(split(4,2)).toEqual(false)
     })
-    it('should return smallest difference it cuts',()=>{
-        expect(solution([testArray])).toEqual(1)
+    it('should calculate diffrence between cut and remainder',()=>{
+        expect(calculateDiff(3, 13)).toEqual(7)
+        expect(calculateDiff(4, 13)).toEqual(5)
+        expect(calculateDiff(6, 13)).toEqual(1)
     })
+    // it('should return smallest difference it cuts',()=>{
+    //     expect(solution([testArray])).toEqual(1)
+    // })
 })
