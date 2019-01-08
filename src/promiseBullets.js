@@ -7,32 +7,13 @@ const createRifle = function () {
     }
 }
 
-const reloadRifle = function (reloadTime) {
-    let actionCount = 0;
-    for (let i = 0; i < reloadTime; i++) {
-        setTimeout(function () {
-            actionCount++
-            console.log(actionCount)
-        }, 500);
-    }
-
-    return actionCount
-}
-
 const operateRifle = function () {
-    let rifle = createRifle();
-    if (rifle.loaded === false) {
-        const promiseBullets = new Promise(function (resolve, reject) {
-            const loadActions = reloadRifle(rifle.reloadTime)
-            resolve(loadActions)
-        })
-        promiseBullets.then((reloadActions) => {
-            if (reloadActions === rifle.reloadTime) {
-                rifle.loaded === true
-            }
-        })
-    }
-    return rifle.loaded ? "loaded" : "unloaded"
+    return new Promise(function (resolve, reject) {
+        const rifle = createRifle()
+        setTimeout(function(){
+            resolve("loaded")
+        },500*rifle.reloadTime)
+    })
 }
 
-module.exports = {operateRifle, reloadRifle}
+module.exports = {operateRifle}
