@@ -33,4 +33,12 @@ const removeMagFromPouch = function () {
     })
 }
 
-module.exports = {loadRifle, fireBurst, removeMagFromPouch}
+const chargeRifle = function (){
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            resolve("weapon ready")
+        }, 500*2)
+    })
+}
+
+module.exports = {loadRifle, fireBurst, removeMagFromPouch, chargeRifle}
