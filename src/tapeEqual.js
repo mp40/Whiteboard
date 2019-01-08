@@ -1,3 +1,6 @@
+// only works with positive numbers
+// needs refactoring to work with negatives
+
 function split(num,len){
     return num > 0 && num < len ? true : false
 }
