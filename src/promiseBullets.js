@@ -41,4 +41,12 @@ const chargeRifle = function (){
     })
 }
 
-module.exports = {loadRifle, fireBurst, removeMagFromPouch, chargeRifle}
+const shoulderRifle = function (){
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            resolve('weapon shouldered')
+        })
+    })
+}
+
+module.exports = {loadRifle, fireBurst, removeMagFromPouch, chargeRifle, shoulderRifle}
