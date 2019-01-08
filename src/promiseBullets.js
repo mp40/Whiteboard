@@ -12,6 +12,7 @@ const reloadRifle = function (reloadTime) {
     for (let i = 0; i < reloadTime; i++) {
         setTimeout(function () {
             actionCount++
+            console.log(actionCount)
         }, 500);
     }
 
@@ -20,7 +21,6 @@ const reloadRifle = function (reloadTime) {
 
 const operateRifle = function () {
     let rifle = createRifle();
-    //let reloadActions = 0;
     if (rifle.loaded === false) {
         const promiseBullets = new Promise(function (resolve, reject) {
             const loadActions = reloadRifle(rifle.reloadTime)
@@ -31,12 +31,8 @@ const operateRifle = function () {
                 rifle.loaded === true
             }
         })
-        //reloadActions = reloadRifle(rifle.reloadTime)
     }
-    // if (reloadActions === rifle.reloadTime) {
-    //     rifle.loaded === true
-    // }
     return rifle.loaded ? "loaded" : "unloaded"
 }
 
-module.exports = operateRifle
+module.exports = {operateRifle, reloadRifle}
