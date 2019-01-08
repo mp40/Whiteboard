@@ -24,4 +24,13 @@ const fireBurst = function () {
         },500)
     })
 }
-module.exports = {loadRifle, fireBurst}
+
+const removeMagFromPouch = function () {
+    return new Promise(function (resolve, reject){
+        setTimeout(function(){
+            resolve("fresh mag removed from pouch")
+        },500*4)
+    })
+}
+
+module.exports = {loadRifle, fireBurst, removeMagFromPouch}

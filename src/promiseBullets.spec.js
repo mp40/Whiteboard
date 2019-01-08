@@ -1,4 +1,4 @@
-const {loadRifle, fireBurst} = require('./promiseBullets')
+const {loadRifle, fireBurst, removeMagFromPouch} = require('./promiseBullets')
 
 describe('loading the rifle', () => {
     it("should wait till the rifle is loaded - asymc/await", async () => {
@@ -18,5 +18,12 @@ describe('firing full auto burst from rifle',()=>{
     it("should fire value of key rateOfFire in 500ms", async ()=> {
         const data = await fireBurst();
         expect(data).toEqual("BANG\nBANG\nBANG\nBANG\nBANG\n")
+    })
+})
+
+describe('removing new magazine from pouch',()=>{
+    it('should remove a new magazine from pouch', async ()=>{
+        const data = await removeMagFromPouch();
+        expect(data).toEqual("fresh mag removed from pouch")
     })
 })
