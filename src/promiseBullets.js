@@ -7,7 +7,7 @@ const createRifle = function () {
     }
 }
 
-const operateRifle = function () {
+const loadRifle = function () {
     return new Promise(function (resolve, reject) {
         const rifle = createRifle()
         setTimeout(function(){
@@ -16,4 +16,12 @@ const operateRifle = function () {
     })
 }
 
-module.exports = {operateRifle}
+const fireBurst = function () {
+    return new Promise(function (resolve, reject) {
+        const rifle = createRifle()
+        setTimeout(function(){
+            resolve("BANG\n".repeat(rifle.rateOfFire))
+        },500)
+    })
+}
+module.exports = {loadRifle, fireBurst}
