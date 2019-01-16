@@ -4,7 +4,7 @@ function checkOpener(S, i){
     return opener.includes(char) ? true : false
 }
 
-function solution(brackets) {
+function checkBrackets(brackets) {
     if(brackets.length%2 !== 0){
         return false
     }
@@ -29,7 +29,6 @@ function solution(brackets) {
             }
         }        
     }
-
     return true
 }
-module.exports = {solution, checkOpener}
+module.exports = {checkBrackets, checkOpener}
