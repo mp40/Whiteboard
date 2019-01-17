@@ -14,4 +14,26 @@ const findValue = function(number){
     return result
 }
 
-module.exports = findValue
+const recurseFib = function(number){
+    if (number === 1) {
+        return 1
+    }
+    let result = 0;
+    let count = 1
+    let last = 1
+    let beforeLast = 0 
+    const recur = function(){
+        result = last + beforeLast
+        beforeLast = last
+        last = result
+        if (count === number-1){
+            return result
+        }
+        count ++
+        recur() 
+    }
+    recur()
+    return result
+}
+
+module.exports = {findValue, recurseFib}
