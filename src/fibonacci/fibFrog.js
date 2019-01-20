@@ -24,6 +24,9 @@ and every position containing a leaf.
 */
 
 const findJumps = function(len){
+    if (len < 2){
+        return 1
+    }
     let jumps = [1]
     // populate array containing possible jump lengths
     if (len > 1){
