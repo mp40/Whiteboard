@@ -27,7 +27,7 @@ const findJumps = function(len){
     if (len < 2){
         return 1
     }
-    let jumps = [1]
+    let fibJumps = [1]
     // populate array containing possible jump lengths
     if (len > 1){
         let last = 1
@@ -37,17 +37,17 @@ const findJumps = function(len){
             beforeLast = last
             last = temp
             if (last < len){
-                jumps.push(last)
+                fibJumps.push(last)
             }
         }
     }
-    return jumps
+    return fibJumps
 }
 
 const fibFrog = function(arr){
     
-    let jumps = findJumps(arr.length)
-    console.log(jumps)
+    let fibJumps = findJumps(arr.length)
+    console.log(fibJumps)
     console.log(arr)
     
 }
