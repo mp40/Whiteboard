@@ -11,11 +11,11 @@ function createDexArray(n){
 }
 
 function compare(arr, dexArr){
-    let result = undefined
+    let result = -1
     for(let i=0; i<arr.length-1; i++){
         if(arr[i] !== arr[i+1]){
             let temp = Math.abs(dexArr[i+0] - dexArr[i+1])
-            if (temp > result || result === undefined){
+            if (temp > result){
                 result = temp
             }
         }

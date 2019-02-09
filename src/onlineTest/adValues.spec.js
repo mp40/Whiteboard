@@ -17,4 +17,8 @@ describe('finding the distance between adjacent values',()=>{
         const arr = [0,3,3,7,5,3,11,1]
         expect(adjValues(arr)).toBe(7)
     })
+    it('should return -1 if no adjacent value is present',()=>{
+        const arr = [1,1,1,1,1,1]
+        expect(adjValues(arr)).toBe(-1)
+    })
 })
