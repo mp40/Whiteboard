@@ -6,11 +6,4 @@ const deleteProp =function(obj, prop){
     return false
 }
 
-const findProp = function(obj, prop){
-    if(obj[prop]){
-        return true
-    }
-    return false
-}
-
-module.exports = {deleteProp, findProp}
+module.exports = {deleteProp}

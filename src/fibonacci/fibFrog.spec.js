@@ -10,8 +10,6 @@ describe('the frog jumping to the other side of the river',()=>{
         const shortArr = [0]
         expect(findJumps(shortArr)).toBe(1)
     })
-    // it('should return the minimum number of jumps',()=>{
-    //     const arr = [0,0,0,1,1,0,1,0,0,0,0]
-    //     expect(fibFrog(arr)).toBe(3)
-    // })
+    // it
+    
 })
