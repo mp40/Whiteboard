@@ -7,5 +7,13 @@ describe('passing Rektor test',()=>{
             const message = '11234567890sixten'
             expect(findSignal(message)).toEqual(result)
         })
+        it('should work with double at front and back',()=>{
+            const message = '11234567890sixtenn'
+            expect(findSignal(message)).toEqual(result)
+        })
+        it('should work with longer message',()=>{
+            const message = 'hcvska11234567890sixtennjjvhqkb'
+            expect(findSignal(message)).toEqual(result)
+        })
     })
 })
