@@ -37,6 +37,6 @@ function biValue(arr){
         }
     }  
     return result      
-}
 
+}
 module.exports = biValue

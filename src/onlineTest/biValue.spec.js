@@ -8,7 +8,7 @@ ex: [5, 4, 4, 5, 0, 12]  => 4 (since the slice from index 0 to 3 is bi-valued)
 
 const biValue = require('./biValue')
 
-describe('finding largest b-value slice in an array',()=>{
+describe.only('finding largest b-value slice in an array',()=>{
     it('should return the longest slice length',()=>{
         expect(biValue([5,4,4,5,0,12])).toBe(4)
         expect(biValue([9,4,4,4,8])).toBe(4)
