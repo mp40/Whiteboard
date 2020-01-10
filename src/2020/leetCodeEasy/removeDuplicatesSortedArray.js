@@ -9,7 +9,14 @@ you must do this by modifying the input array in-place with O(1) extra memory.
 */
 
 export const removeDuplicates = (nums) => {
-    return null;
+    let iPointer = 0;
+    for(let jPointer = 1; jPointer < nums.length; jPointer++){
+        if(nums[iPointer] !== nums[jPointer]){
+            nums[iPointer + 1] = nums[jPointer];
+            iPointer++;
+        }
+    }
+    return iPointer + 1;
 }
 
 /*
