@@ -20,12 +20,24 @@ describe('Remove Duplicates from Sorted Array algorithm', () => {
         const array = [-1,-100,3,99];
         const k = 2;
         rotate(array, k);
-        expect(array).toEqual([5,6,7,1,2,3,4]);
+        expect(array).toEqual([3,99,-1,-100]);
         /*
         Explanation:
         rotate 1 steps to the right: [99,-1,-100,3]
         rotate 2 steps to the right: [3,99,-1,-100]
         */
+    })
+    it('should work with arrays of length 1', () => {
+        const array = [-1];
+        const k = 2;
+        rotate(array, k);
+        expect(array).toEqual([-1]);
+    })
+    it('should work when k is greater than length', () => {
+        const array = [1,2];
+        const k = 3;
+        rotate(array, k);
+        expect(array).toEqual([2,1]);
     })
 })
 
