@@ -36,8 +36,11 @@ so the answer is the concatenation of "12" and "11" which is "1211".
 */
 
 export const countAndSay = function(n) {
-    if(n < 2) {
-        return n + "";
+    if(n === 0) {
+        return "";
+    }
+    if(n === 1) {
+        return "1"
     }
 
     function count(str){
@@ -45,28 +48,19 @@ export const countAndSay = function(n) {
         if(n === 0){
             return str;
         }
-        let value = 1;
+        let pointer = 0;
+        let temp = ""
 
-        for(let i = 0; i <  str.length; i++) {
-            console.log("?")
-            console.log(">>", str.charAt(i), "vs", str.charAt(i+1))
-            console.log(typeof str.charAt(i+1))
-            console.log("-->", str.charAt(i) !== str.charAt(i+1))
-            if(str.charAt(i) !== str.charAt(i+1)){
-                console.log("boo")
-                console.log("b>", str, value, str.charAt(i))
-                console.log('wtf', str + value)
-                // str = str + value + str.charAt(i);
-                // value = 1;
+        for(let i = 1; i <= str.length; i++) {
+            if(str.charAt(i) !== str.charAt(pointer)) {
+                temp = `${temp}${i-pointer}${str.charAt(pointer)}`;
+                pointer = i;
             }
-            // else {
-            //     value++
-            // }
         }
 
-        n--
-        count(str)
+        n--;
+        return count(temp)
     }
-
-    count("1")
+    n = n - 2;
+    return count("11")
 };
