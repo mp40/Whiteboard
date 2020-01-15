@@ -35,6 +35,7 @@ the same way "1" is read as "11",
 so the answer is the concatenation of "12" and "11" which is "1211".
 */
 
+// below has slow run time
 export const countAndSay = function(n) {
     if(n === 0) {
         return "";
