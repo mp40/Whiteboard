@@ -23,7 +23,7 @@ describe('Valid Parentheses', () => {
     })
     it('should return correct answer for example 4', () => {
         const input = "([)]"
-        const output = true
+        const output = false
         expect(isValid(input)).toBe(output)
     })
     it('should return correct answer for example 5', () => {
