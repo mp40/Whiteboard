@@ -19,37 +19,20 @@ A solution set is:
 */
 
 export const threeSum = function(nums) {
-    const result = [];
+    const hashSet = {};
     nums = nums.sort();
 
-    for(let i=0; i < nums.length; i++){
-        // fixed value cannot be same as last value
-        const fixed = nums[i]
-        if(i !== 0 && fixed === nums[i-1]){
-            continue;
-        }
-        let leftPointer = i+1
-        let rightPointer = nums.length-1;
-
-        while(leftPointer < rightPointer){
-            if(fixed + nums[leftPointer] + nums[rightPointer] === 0){
-                result.push([fixed, nums[leftPointer], nums[rightPointer]])
-                leftPointer++
-                // Never let leftPointer refer to the same value twice (in an output) to avoid duplicates
-                while (leftPointer < rightPointer && nums[leftPointer] === nums[leftPointer-1]){
-                    leftPointer++
-                }
-            } else if(fixed + nums[leftPointer] + nums[rightPointer] < 0){
-                leftPointer++
+    for(let i=0; i<nums.length; i++){
+        const target = 0 - nums[i];
+        let cache = {};
+        for(let j=i+1; j<nums.length; j++){
+            const difference = target - nums[j];
+            if(cache[difference] !== undefined) {
+                hashSet[`${nums[i]}${nums[cache[difference]]}${nums[j]}`] = [nums[i], nums[cache[difference]], nums[j]];
             } else {
-                rightPointer--
+                cache[nums[j]] = j
             }
         }
     }
-    return result;
+    return Object.values(hashSet);
 };
-
-/*
-input = [-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6]
-output = [[-4,-2,6],[-4,0,4],[-4,1,3],[-4,2,2],[-2,-2,4],[-2,0,2]]
-*/
