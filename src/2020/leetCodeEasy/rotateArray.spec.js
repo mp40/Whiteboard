@@ -1,7 +1,7 @@
 import { rotate } from './rotateArray';
 
 
-describe('Remove Duplicates from Sorted Array algorithm', () => {
+describe('rotate an array', () => {
     // Example 1:
     it('should return correct result for Example 1', () => {
         const array = [1,2,3,4,5,6,7];
