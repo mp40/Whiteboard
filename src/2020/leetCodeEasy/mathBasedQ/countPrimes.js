@@ -17,12 +17,11 @@ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 */
 
 export const countPrimes = function(n) {
-    if(n < 2){
+    if(n <= 2){
         return 0;
     }
-
     const primesArray = [false, false]
-    for(let i = 2; i*i <= n; i++) {
+    for(let i = 2; i < n; i++) {
         //if not pre-marked as not-prime
         if(primesArray[i] !== false){
             //mark as prime

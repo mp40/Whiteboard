@@ -6,7 +6,8 @@ describe('Counting Prime Numbers', () => {
         const output = 0;
         expect(countPrimes(input)).toBe(output);
     })
-    it('should return 0 from input 2', () => {
+    it('should return 1 from input 2', () => {
+        // primes less than 2 is 0
         const input = 2;
         const output = 0;
         expect(countPrimes(input)).toBe(output);
