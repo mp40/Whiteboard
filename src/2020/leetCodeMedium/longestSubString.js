@@ -28,20 +28,6 @@ export const lengthOfLongestSubstring = function(s) {
         return 0;
     }
 
-    // let current = [s.charAt(0)]
-    // let result = 1;
-
-    // for(let i=1; i<s.length; i++){
-    //     const prevIndex = current.indexOf(s.charAt(i))
-    //     if(prevIndex >= 0){
-    //         current = current.slice(prevIndex+1)
-    //         current.push(s.charAt(i))
-    //     } else {
-    //         current.push(s.charAt(i))
-    //         result = current.length > result ? current.length : result;
-    //     }
-    // }
-
     let result = 0;
     let leftPointer = 0;
     let rightPointer = 0;
