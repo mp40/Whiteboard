@@ -13,9 +13,15 @@ describe('setting n x m matrix zeros', () => {
         setZeroes(input)
         expect(input).toEqual(output)
     })
-    it('should be correct for short single row matrix', () => {
+    it('should be correct for short row, single col matrix', () => {
         const input = [[1,0]];
         const output = [[0,0]];
+        setZeroes(input)
+        expect(input).toEqual(output)
+    })
+    it('should be correct for single element rows, multi col matrix', () => {
+        const input = [[1],[0],[3]];
+        const output = [[0],[0],[0]];
         setZeroes(input)
         expect(input).toEqual(output)
     })
