@@ -26,19 +26,41 @@ Explanation: There are three ways to climb to the top.
 
 // think fibonacci
 
-export const climbStairs = function(n) {
+// export const climbStairs = function(n) {
+//     if(n < 3){
+//         return n;
+//     }
+
+//     let lastStep = 2;
+//     let secondLastStep = 1;
+//     let result = undefined;
+//     for(let i = 3; i <= n; i++){
+//         result = lastStep + secondLastStep;
+//         secondLastStep = lastStep;
+//         lastStep = result;
+//     }
+
+//     return result;
+// };
+
+const memoize = (fn) => {
+    const cache = {};
+    return function(...args){
+        if(cache[args]){
+            return cache[args];
+        }
+        const result = fn.apply(this, args)
+        cache[args] = result;
+        return result;
+    }
+}
+
+export const slowClimbStairs = function(n) {
     if(n < 3){
         return n;
     }
 
-    let lastStep = 2;
-    let secondLastStep = 1;
-    let result = undefined;
-    for(let i = 3; i <= n; i++){
-        result = lastStep + secondLastStep;
-        secondLastStep = lastStep;
-        lastStep = result;
-    }
-
-    return result;
+    return climbStairs(n-1) + climbStairs(n-2);
 };
+
+export const climbStairs = memoize(slowClimbStairs);
