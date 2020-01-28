@@ -25,6 +25,22 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
              Total amount you can rob = 2 + 9 + 1 = 12.
 */
 
-export const rob = function(nums) {
+// every house has two options: rob or don't rob
+// if rob: loot = this house + loot excluding prev house
+// if don't rob: loot including prev house || loot excluding prev house -> whichever is greater
 
+export const rob = function(nums) {
+    if(nums.length === 0){
+        return 0;
+    }
+
+    let include = 0;
+    let exclude = 0;
+
+    for(let house = 0; house < nums.length; house++){
+        let temp = include;
+        include = nums[house] + exclude; // rob
+        exclude = temp > exclude ? temp : exclude; // don't rob
+    }
+    return include > exclude ? include : exclude;
 }
