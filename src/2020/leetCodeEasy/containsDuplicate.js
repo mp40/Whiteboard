@@ -17,7 +17,7 @@ Output: false
 */
 
 // this passed and had better run time than 97.18% of all other JS submissions.
-var containsDuplicate = function(nums) {
+export const containsDuplicate = function(nums) {
     const hashSet = new Set(nums);
     return hashSet.size !== nums.length
 };
