@@ -20,7 +20,7 @@ class Queue  {
             return "Full";
         }
 
-        this.items.unshift(item);
+        this.items.push(item);
 
         return item;
     }

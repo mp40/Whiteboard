@@ -34,10 +34,11 @@ describe('the Queue data structure', () => {
 
     describe('the Queue enqueue method', () => {
 
-        it('should insert the element at the start of the Queue', () => {
+        it('should insert the element at the end of the Queue', () => {
             queue.enqueue(2);
             queue.enqueue(1);
-            expect(queue.items[0]).toBe(1);
+            expect(queue.items[0]).toBe(2);
+            expect(queue.items[1]).toBe(1);
         })
 
         it('should return full is Queue is already full', () => {
