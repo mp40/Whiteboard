@@ -52,6 +52,24 @@ class LinkedList {
 
         this.size++
     }
+
+    removeFrom(index) {
+        let current = this.head;
+        let prev = undefined;
+        let count = 0;
+
+        while(count < index) {
+            prev = current;
+            current = current.next;
+            count++;
+        }
+
+        prev.next = current.next;
+
+        this.size--;
+
+        return current;
+    }
 }
 
 export default LinkedList;

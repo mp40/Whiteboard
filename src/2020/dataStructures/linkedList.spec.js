@@ -78,4 +78,16 @@ describe('the Linked List data structure', () => {
             expect(linkedList.size).toBe(2);
         })
     })
+
+    describe('the removeFrom method', () => {
+        it('should remove and return the node from the specified index', () => {
+            linkedList.add('head');
+            linkedList.add('middle');
+            linkedList.add('last');
+
+            expect(linkedList.removeFrom(1).data).toBe('middle');
+            expect(linkedList.size).toBe(2);
+            expect(linkedList.head.next.data).toEqual('last');
+        })
+    })
 })
