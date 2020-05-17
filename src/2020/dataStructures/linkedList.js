@@ -54,17 +54,24 @@ class LinkedList {
     }
 
     removeFrom(index) {
+        if(index > 0 && index > this.size) {
+            return false;
+        }
+
         let current = this.head;
         let prev = undefined;
         let count = 0;
 
-        while(count < index) {
-            prev = current;
-            current = current.next;
-            count++;
+        if(index === 0) {
+            this.head = this.head.next
+        } else {
+            while(count < index) {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            prev.next = current.next;
         }
-
-        prev.next = current.next;
 
         this.size--;
 
