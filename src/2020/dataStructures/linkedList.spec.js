@@ -106,4 +106,35 @@ describe('the Linked List data structure', () => {
             expect(linkedList.size).toBe(2);
         })
     })
+
+    describe('the removeData method', () => {
+        beforeEach(() => {
+            linkedList.add('head');
+            linkedList.add('middle');
+            linkedList.add('last');
+        })
+
+        it('should remove and return the specified data', () => {
+            expect(linkedList.removeData('middle')).toBe('middle');
+            expect(linkedList.size).toBe(2);
+            expect(linkedList.head.next.data).toEqual('last');
+        })
+
+        it('should remove and return the head when data is at head', () => {
+            expect(linkedList.removeData('head')).toBe('head');
+            expect(linkedList.size).toBe(2);
+            expect(linkedList.head.data).toEqual('middle');
+            expect(linkedList.head.next.data).toEqual('last');
+        })
+
+        it('should return false if data not found', () => {
+            expect(linkedList.removeData('Not In List')).toBe(false);
+            expect(linkedList.size).toBe(3);
+        })
+
+        it('should return last node data if in last node', () => {
+            expect(linkedList.removeData('last')).toBe('last');
+            expect(linkedList.size).toBe(2);
+        })
+    })
 })
