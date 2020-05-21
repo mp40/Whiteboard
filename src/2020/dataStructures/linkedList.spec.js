@@ -137,4 +137,28 @@ describe('the Linked List data structure', () => {
             expect(linkedList.size).toBe(2);
         })
     })
+
+    describe('the indexOf method', () => {
+        beforeEach(() => {
+            linkedList.add('head');
+            linkedList.add('middle');
+            linkedList.add('last');
+        })
+
+        it('should return 0 if given data at head', () => {
+            expect(linkedList.indexOf('head')).toBe(0);
+        })
+
+        it('should return 1 if given data at index 1', () => {
+            expect(linkedList.indexOf('middle')).toBe(1);
+        })
+
+        it('should return correct index value if given data at last index', () => {
+            expect(linkedList.indexOf('last')).toBe(2);
+        })
+
+        it('should return false if data not found', () => {
+            expect(linkedList.indexOf('Not In List')).toBe(false);
+        })
+    })
 })

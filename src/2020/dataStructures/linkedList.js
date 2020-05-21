@@ -101,6 +101,25 @@ class LinkedList {
 
         return false;
     }
+
+    indexOf(data) {
+        let current = this.head;
+        let count = 0;
+
+        if(current.data === data) {
+            return count;
+        }
+
+        while(current !== null) {
+            if(current.data === data) {
+                return count;
+            }
+            count++;
+            current = current.next;
+        }
+
+        return false;
+    }
 }
 
 export default LinkedList;
