@@ -79,27 +79,8 @@ class LinkedList {
     }
 
     removeData(data) {
-        let current = this.head;
-        let prev = undefined;
-
-        if(current.data === data) {
-            this.head = current.next;
-            this.size--;
-            return current.data;
-        }
-
-        while(current !== null) {
-            if(current.data === data) {
-                prev.next = current.next;
-                this.size--;
-                return current.data;
-            } else {
-                prev = current;
-                current = current.next;
-            }
-        }
-
-        return false;
+        const index = this.indexOf(data)
+        return index === false ? false : this.removeFrom(index).data;
     }
 
     indexOf(data) {

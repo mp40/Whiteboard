@@ -114,7 +114,7 @@ describe('the Linked List data structure', () => {
             linkedList.add('last');
         })
 
-        it('should remove and return the specified data', () => {
+        it('should remove and return the node with the specified data', () => {
             expect(linkedList.removeData('middle')).toBe('middle');
             expect(linkedList.size).toBe(2);
             expect(linkedList.head.next.data).toEqual('last');
