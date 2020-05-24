@@ -171,4 +171,16 @@ describe('the Linked List data structure', () => {
             expect(linkedList.isEmpty()).toBe(false);
         })
     })
+
+    describe('the listSize method', ()=> {
+        it('should return 0 if empty', () => {
+            expect(linkedList.listSize()).toBe(0);
+        })
+        it('should return size of list', () => {
+            linkedList.add('head');
+            expect(linkedList.listSize()).toBe(1);
+            linkedList.add('last');
+            expect(linkedList.listSize()).toBe(2);
+        })
+    })
 })
