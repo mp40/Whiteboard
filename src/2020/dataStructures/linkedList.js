@@ -101,6 +101,10 @@ class LinkedList {
 
         return false;
     }
+
+    isEmpty() {
+        return this.size === 0;
+    }
 }
 
 export default LinkedList;

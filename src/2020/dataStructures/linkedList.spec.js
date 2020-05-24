@@ -161,4 +161,14 @@ describe('the Linked List data structure', () => {
             expect(linkedList.indexOf('Not In List')).toBe(false);
         })
     })
+
+    describe('the isEmpty method', ()=> {
+        it('should return true if empty', () => {
+            expect(linkedList.isEmpty()).toBe(true);
+        })
+        it('should return false if not empty', () => {
+            linkedList.add('head');
+            expect(linkedList.isEmpty()).toBe(false);
+        })
+    })
 })
