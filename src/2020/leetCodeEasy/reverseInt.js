@@ -24,5 +24,6 @@ assume that your function returns 0 when the reversed integer overflows.
 */
 
 export const reverse = (x) => {
-    return 0;
+    const result = x.toString().split("").reverse().join('');
+    return parseInt(result, 10);
 };

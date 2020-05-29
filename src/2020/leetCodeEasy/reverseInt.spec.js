@@ -6,4 +6,9 @@ describe('reversing an integer', () => {
         const output = 321;
         expect(reverse(input)).toBe(output);
     })
+    it('should reverse integers eneding with 0', () => {
+        const input = 120;
+        const output = 21;
+        expect(reverse(input)).toBe(output);
+    })
 })
