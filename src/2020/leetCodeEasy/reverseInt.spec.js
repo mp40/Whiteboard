@@ -11,4 +11,9 @@ describe('reversing an integer', () => {
         const output = 21;
         expect(reverse(input)).toBe(output);
     })
+    it('should reverse negative integers', () => {
+        const input = -123;
+        const output = -321;
+        expect(reverse(input)).toBe(output);
+    })
 })
