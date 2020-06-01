@@ -24,6 +24,12 @@ assume that your function returns 0 when the reversed integer overflows.
 */
 
 export const reverse = (x) => {
-    const result = x.toString().split("").reverse().join('');
-    return x < 0 ? -parseInt(result, 10) : parseInt(result, 10);
+    const reversed = x.toString().split("").reverse().join('');
+    const result = x < 0 ? -parseInt(reversed, 10) : parseInt(reversed, 10);
+
+    if(result > Math.pow(2, 31) || result < -Math.pow(2, 31)) {
+        return 0;
+    }
+
+    return result
 };
