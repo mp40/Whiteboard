@@ -19,6 +19,7 @@ export const lengthOfLastWord = (s) => {
         return 0;
     }
 
-    const arr = s.split(" ")
-    return arr[arr.length-1].length
+    const arr = s.trim().split(' ');
+
+    return arr[arr.length-1].length;
 };
