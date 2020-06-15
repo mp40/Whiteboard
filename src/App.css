@@ -10,10 +10,6 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  /* display: flex; */
-  /* flex-direction: column;
-  align-items: center;
-  justify-content: center; */
   font-size: calc(3px + 2vmin);
   color: white;
 }
@@ -29,10 +25,6 @@
 .Character-Name {
   background-color: aqua;
 }
-
-/* .Name-Button {
-  outline-color: crimson
-} */
 
 @keyframes App-logo-spin {
   from {
