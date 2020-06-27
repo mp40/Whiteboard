@@ -6,4 +6,9 @@ describe('finding the single number', () => {
         const output = 1;
         expect(singleNumber(input)).toBe(output);
     })
+    it('should return the single number in array of 3 numbers', () => {
+        const input = [4,1,2,1,2];
+        const output = 4;
+        expect(singleNumber(input)).toBe(output);
+    })
 })

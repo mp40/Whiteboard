@@ -19,5 +19,19 @@ Output: 4
 */
 
 export const singleNumber = (nums) => {
+    const cache = {}
 
+    for(let i = 0; i < nums.length; i++) {
+        cache[nums[i]] = cache[nums[i]] ? cache[nums[i]] += 1 : 1
+    }
+
+    let result;
+
+    for(const num in cache) {
+        if(cache[num] === 1) {
+            result = num;
+        }
+    }
+
+    return Number(result);
 };
