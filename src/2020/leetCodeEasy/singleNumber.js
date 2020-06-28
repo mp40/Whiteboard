@@ -25,13 +25,10 @@ export const singleNumber = (nums) => {
         cache[nums[i]] = cache[nums[i]] ? cache[nums[i]] += 1 : 1
     }
 
-    let result;
-
     for(const num in cache) {
         if(cache[num] === 1) {
-            result = num;
+            return Number(num);
         }
     }
 
-    return Number(result);
 };
