@@ -27,15 +27,12 @@ export const maxProfit = (prices) => {
     let buy = undefined;
 
     for(let i = 0; i < prices.length; i++) {
-        let temp = 0;
 
         if(buy === undefined || buy > prices[i]) {
             buy = prices[i]
-        } else {
-            temp = prices[i] - buy
+        } else if(prices[i] - buy > profit) {
+            profit = prices[i] - buy;
         }
-
-        profit =  temp > profit ? temp : profit;
     }
 
     return profit;
