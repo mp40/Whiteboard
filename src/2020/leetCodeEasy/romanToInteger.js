@@ -51,7 +51,8 @@ Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 */
 
-export const findInt = (roman) => {
+export const romanToInt = (s) => {
+
     const numberMap = {
         I: 1,
         V: 5,
@@ -62,21 +63,17 @@ export const findInt = (roman) => {
         M: 1000,
     }
 
-    return numberMap[roman];
-}
-
-export const romanToInt = (s) => {
     const numbers = s.split("");
 
     let result = 0;
     let pointer = 0;
 
     while(pointer < numbers.length) {
-        if(findInt(numbers[pointer]) < findInt(numbers[pointer + 1])) {
-            result += findInt(numbers[pointer + 1]) - findInt(numbers[pointer]);
+        if(numberMap[numbers[pointer]] < numberMap[numbers[pointer + 1]]) {
+            result += numberMap[numbers[pointer + 1]] - numberMap[numbers[pointer]];
             pointer += 2;
         } else {
-            result += findInt(numbers[pointer]);
+            result += numberMap[numbers[pointer]];
             pointer += 1;
         }
     }
