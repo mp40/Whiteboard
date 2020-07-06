@@ -31,5 +31,10 @@ describe('Valid Parentheses', () => {
         const output = true
         expect(isValid(input)).toBe(output)
     })
+    it('should return false for "(("', () => {
+        const input = "(("
+        const output = false
+        expect(isValid(input)).toBe(output)
+    })
 })
 

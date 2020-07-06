@@ -33,10 +33,11 @@ Output: true
 */
 
 export const isValid = function(s) {
-    if(s.length === 0){
+    if(s.length === 0) {
         return true;
     }
-    if(s.length %2 !== 0){
+
+    if(s.length %2 !== 0) {
         return false;
     }
 
@@ -52,11 +53,11 @@ export const isValid = function(s) {
 
     const stack = [];
 
-    for(let i=0; i<s.length; i++){
-        if(map[s.charAt(i)] !== undefined){
+    for(let i = 0; i < s.length; i++) {
+        if(map[s.charAt(i)] !== undefined) {
             stack.push(s.charAt(i));
         } else {
-            if(map[stack.pop()] !== s.charAt(i)){
+            if(map[stack.pop()] !== s.charAt(i)) {
                 return false
             }
         }
