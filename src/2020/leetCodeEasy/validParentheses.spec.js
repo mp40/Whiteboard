@@ -6,27 +6,27 @@ describe('Valid Parentheses', () => {
         const output = true
         expect(isValid(input)).toBe(output)
     })
-    it('should return correct answer for example 1', () => {
+    it('should return true for "()"', () => {
         const input = "()"
         const output = true
         expect(isValid(input)).toBe(output)
     })
-    it('should return correct answer for example 2', () => {
+    it('should return true for "()[]{}"', () => {
         const input = "()[]{}"
         const output = true
         expect(isValid(input)).toBe(output)
     })
-    it('should return correct answer for example 3', () => {
+    it('should return false for "(]"', () => {
         const input = "(]"
         const output = false
         expect(isValid(input)).toBe(output)
     })
-    it('should return correct answer for example 4', () => {
+    it('should return false for "([)]"', () => {
         const input = "([)]"
         const output = false
         expect(isValid(input)).toBe(output)
     })
-    it('should return correct answer for example 5', () => {
+    it('should return true for "{[]}"', () => {
         const input = "{[]}"
         const output = true
         expect(isValid(input)).toBe(output)
