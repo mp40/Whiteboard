@@ -25,7 +25,18 @@ Input: [1,3,5,6], 0
 Output: 0
 */
 
+// below is simple iterative solution,
+// binary search version also possible.
+
 export const searchInsert = (nums, target) => {
+
+    if(target < nums[0]) {
+        return 0;
+    }
+
+    if(target > nums[nums.length-1]) {
+        return nums.length;
+    }
 
     for(let i = 0; i < nums.length; i++) {
         if(target === nums[i] || target < nums[i]) {
@@ -33,5 +44,4 @@ export const searchInsert = (nums, target) => {
         }
     }
 
-    return nums.length;
 }
