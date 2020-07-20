@@ -2,12 +2,12 @@ import { fib } from './findNthFib';
 
 describe('find the nth number in fib sequence', () => {
     it('should value 0 for 0th position in sequence', () => {
-        const input = 2;
-        const result = 1;
+        const input = 0;
+        const result = 0;
         expect(fib(input)).toBe(result);
     });
     it('should value 1 for 1st position in sequence', () => {
-        const input = 2;
+        const input = 1;
         const result = 1;
         expect(fib(input)).toBe(result);
     });
