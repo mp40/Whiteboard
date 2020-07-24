@@ -8,12 +8,12 @@ describe('Plus One', () => {
     })
     it('should add one to single digit numbers', () => {
         const input = [9];
-        const output = [10];
+        const output = [1, 0];
         expect(plusOne(input)).toBe(output);
     })
     it('should add one to two digit numbers', () => {
-        const input = [10];
-        const output = [11];
+        const input = [1, 0];
+        const output = [1, 1];
         expect(plusOne(input)).toBe(output);
     })
     it('should add one to three digit numbers', () => {
