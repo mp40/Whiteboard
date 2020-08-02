@@ -24,5 +24,21 @@ height (7) * width (7) = 49
 */
 
 export const maxArea = (height) => {
+    let water = 0;
 
+    let left = 0
+    let right = height.length - 1;
+
+    while(left < right) {
+        const temp = Math.min(height[left], height[right]) * Math.abs(left - right);
+        water = Math.max(water, temp)
+
+        if(height[left] < height[right]) {
+            left += 1;
+        } else {
+            right -= 1;
+        }
+    }
+
+    return water;
 };
