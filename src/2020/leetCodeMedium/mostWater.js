@@ -30,7 +30,7 @@ export const maxArea = (height) => {
     let right = height.length - 1;
 
     while(left < right) {
-        const temp = Math.min(height[left], height[right]) * Math.abs(left - right);
+        const temp = Math.min(height[left], height[right]) * (right - left);
         water = Math.max(water, temp)
 
         if(height[left] < height[right]) {
