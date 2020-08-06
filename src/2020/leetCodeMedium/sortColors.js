@@ -21,5 +21,26 @@ Could you come up with a one-pass algorithm using only constant space?
 */
 
 export const sortColors = (nums) => {
+    const map = {
+        '0': 0,
+        '1': 0,
+        '2': 0,
+    }
 
+    for(let i = 0; i < nums.length; i++) {
+        map[nums[i]] += 1;
+    }
+
+    for(let i = 0; i < nums.length; i++) {
+        if(map['0'] > 0) {
+            nums[i] = 0;
+            map['0'] -= 1;
+        } else if(map['1'] > 0) {
+            nums[i] = 1;
+            map['1'] -= 1;
+        } else {
+            nums[i] = 2;
+            map['2'] -= 1;
+        }
+    }
 };
