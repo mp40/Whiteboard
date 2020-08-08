@@ -13,4 +13,10 @@ describe('sort colors', () => {
         sortColors(input);
         expect(input).toEqual(result);
     })
+    it('it should sort [1, 2, 0]', ()=> {
+        const input = [1, 2, 0];
+        const result = [0, 1, 2];
+        sortColors(input);
+        expect(input).toEqual(result);
+    })
 })
