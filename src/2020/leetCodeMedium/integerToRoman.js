@@ -40,5 +40,27 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 */
 
 export const intToRoman = (num) => {
+    const unitsSingle = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+    const unitsTens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+    const unitsHundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+    const unitsThousands = ["", "M", "MM", "MMM"]
 
+    if(num < 10) {
+        return unitsSingle[num];
+    }
+
+    if(num < 100) {
+        const remainer = num % 10;
+        return unitsTens[Math.floor(num / 10)] + intToRoman(remainer)
+    }
+
+    if(num < 1000) {
+        const remainer = num % 100;
+        return unitsHundreds[Math.floor(num / 100)] + intToRoman(remainer)
+    }
+
+    if(num < 4000) {
+        const remainer = num % 1000;
+        return unitsThousands[Math.floor(num / 1000)] + intToRoman(remainer)
+    }
 };
