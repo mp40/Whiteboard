@@ -45,22 +45,8 @@ export const intToRoman = (num) => {
     const unitsHundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
     const unitsThousands = ["", "M", "MM", "MMM"]
 
-    if(num < 10) {
-        return unitsSingle[num];
-    }
-
-    if(num < 100) {
-        const remainer = num % 10;
-        return unitsTens[Math.floor(num / 10)] + intToRoman(remainer)
-    }
-
-    if(num < 1000) {
-        const remainer = num % 100;
-        return unitsHundreds[Math.floor(num / 100)] + intToRoman(remainer)
-    }
-
-    if(num < 4000) {
-        const remainer = num % 1000;
-        return unitsThousands[Math.floor(num / 1000)] + intToRoman(remainer)
-    }
+    return unitsThousands[Math.floor(num / 1000)] +
+        unitsHundreds[Math.floor(num % 1000 / 100)] +
+        unitsTens[Math.floor(num % 100 / 10)] +
+        unitsSingle[Math.floor(num % 10)]
 };
