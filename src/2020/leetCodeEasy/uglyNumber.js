@@ -29,5 +29,25 @@ Input is within the 32-bit signed integer range: [−231,  231 − 1].
 */
 
 export const isUgly = (num) => {
+    if(num < 1) {
+        return false;
+    }
 
+    if(num === 1) {
+        return true;
+    }
+
+    while(num % 2 === 0) {
+        num /= 2;
+    }
+
+    while(num % 3 === 0) {
+        num /= 3;
+    }
+
+    while(num % 5 === 0) {
+        num /= 5
+    }
+
+    return num === 1;
 }
