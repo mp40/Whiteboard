@@ -16,4 +16,14 @@ describe('climbing stairs', () => {
         const output = 8;
         expect(climbStairs(input)).toBe(output);
     })
+    it('should return combos for large even numbers', () => {
+        const input = 42;
+        const output = 433494437;
+        expect(climbStairs(input)).toBe(output);
+    })
+    it('should return combos for large odd numbers', () => {
+        const input = 45;
+        const output = 1836311903;
+        expect(climbStairs(input)).toBe(output);
+    })
 })
