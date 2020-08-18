@@ -36,5 +36,23 @@ Output:
 */
 
 export const setZeroes = function(matrix) {
+  const cols = {};
+  const rows = {};
 
+  for(let i = 0; i < matrix.length; i++) {
+    for(let j = 0; j < matrix[i].length; j++) {
+      if(matrix[i][j] === 0) {
+        cols[i] = true;
+        rows[j] = true;
+      }
+    }
+  }
+
+  for(let i = 0; i < matrix.length; i ++) {
+    for(let j = 0; j < matrix[i].length; j++) {
+      if(cols[i] || rows[j]) {
+        matrix[i][j] = 0;
+      }
+    }
+  }
 };
