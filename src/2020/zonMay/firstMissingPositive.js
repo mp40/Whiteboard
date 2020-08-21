@@ -45,6 +45,8 @@ export const firstMissingPositive = (nums) => {
     }
 
     // step 2
+    // nums values are now index + 1 refrences
+    // look at each reference and flip to negitive to show we saw thaat value
     for(let i = 0; i < nums.length; i++) {
         const index = Math.abs(nums[i]) -1;
         if(nums[index] > 0) {
@@ -54,6 +56,7 @@ export const firstMissingPositive = (nums) => {
     }
 
     // step 3
+    // find first non-negitive number
     for(let i = 0; i < nums.length; i++)  {
         if(nums[i] > 0) {
             return i + 1
