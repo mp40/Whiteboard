@@ -1,6 +1,10 @@
 // Best Time to Buy and Sell Stock
 // https://leetcode.com/explore/featured/card/top-interview-questions-easy/97/dynamic-programming/572/
 
+// export const maxProfit = (prices) => {
+
+// }
+
 /*
 Say you have an array for which the ith element is the price of a given stock on day i.
 
@@ -21,6 +25,23 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
+
+/*
+ANSWER BELOW THIS COMMENT BLOCK
+-
+-
+-
+-
+-
+*/
+
+/*
+The points of interest are the peaks and valleys in the given graph. 
+We need to find the largest peak following the smallest valley. 
+We can maintain two variables - minprice and maxprofit 
+corresponding to the smallest valley and maximum profit (maximum difference between selling price and minprice) obtained so far respectively.
+*/
+
 
 export const maxProfit = (prices) => {
     let profit = 0;

@@ -13,17 +13,18 @@ Note: You may not engage in multiple transactions at the same time
 (i.e., you must sell the stock before you buy again).
 */
 
-export const maxProfit = (prices) => {
-    let result = 0;
+// export const maxProfit = (prices) => {
 
-    for(let i = 1; i < prices.length; i++){
-        if(prices[i] > prices[i-1]){
-            result += prices[i] - prices[i-1];
-        }
-    }
+// }
 
-    return result;
-}
+/*
+ANSWER BELOW THIS COMMENT BLOCK
+-
+-
+-
+-
+-
+*/
 
 /*
 Approach 3: Simple One Pass
@@ -41,3 +42,15 @@ consecutive numbers of the array if the second number
 is larger than the first one, and at the total sum we obtain
 will be the maximum profit. This approach will simplify the solution.
 */
+
+export const maxProfit = (prices) => {
+    let result = 0;
+
+    for(let i = 1; i < prices.length; i++){
+        if(prices[i] > prices[i-1]){
+            result += prices[i] - prices[i-1];
+        }
+    }
+
+    return result;
+}
