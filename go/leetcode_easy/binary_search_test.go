@@ -40,7 +40,7 @@ func TestSearch(t *testing.T) {
 	})
 
 	t.Run("should find target in length 1 array", func(t *testing.T) {
-		lenOneArray := []int{2, 5}
+		lenOneArray := []int{5}
 		target := 5
 
 		got := Search(lenOneArray, target)
