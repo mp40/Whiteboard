@@ -3,7 +3,7 @@ package buy_sell_stock_two
 import "testing"
 
 func TestMaxProfit(t *testing.T) {
-	assertCorrectIndexValue := func(t testing.TB, got, want int) {
+	assertCorrectProfitValue := func(t testing.TB, got, want int) {
 		t.Helper()
 		if got != want {
 			t.Errorf("got %v want %v", got, want)
@@ -21,7 +21,7 @@ func TestMaxProfit(t *testing.T) {
 		got := MaxProfit(array)
 		want := 7
 
-		assertCorrectIndexValue(t, got, want)
+		assertCorrectProfitValue(t, got, want)
 	})
 
 	/*
@@ -36,7 +36,7 @@ func TestMaxProfit(t *testing.T) {
 		got := MaxProfit(array)
 		want := 4
 
-		assertCorrectIndexValue(t, got, want)
+		assertCorrectProfitValue(t, got, want)
 	})
 
 	/*
@@ -49,6 +49,6 @@ func TestMaxProfit(t *testing.T) {
 		got := MaxProfit(array)
 		want := 0
 
-		assertCorrectIndexValue(t, got, want)
+		assertCorrectProfitValue(t, got, want)
 	})
 }
