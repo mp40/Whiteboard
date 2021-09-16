@@ -2,7 +2,7 @@ package buy_sell_stock
 
 import "testing"
 
-func TestSearch(t *testing.T) {
+func TestMaxProfit(t *testing.T) {
 	assertCorrectIndexValue := func(t testing.TB, got, want int) {
 		t.Helper()
 		if got != want {

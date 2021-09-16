@@ -34,7 +34,7 @@ but with only a slight variation. In this case,
 instead of looking for every peak following a valley,
 we can simply go on crawling over the slope and keep on adding the profit
 obtained from every consecutive transaction.
-In the end,we will be using the peaks and valleys effectively,
+In the end, we will be using the peaks and valleys effectively,
 but we need not track the costs corresponding to the
 peaks and valleys along with the maximum profit,
 but we can directly keep on adding the difference between the
