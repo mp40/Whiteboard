@@ -75,3 +75,20 @@ climbing_stairs_products = [
 @pytest.mark.parametrize('n, output', climbing_stairs_products)
 def test_climbing_stairs(n, output):
     assert climbing_stairs.climbStairs(n) == output
+
+# -----------------------------------------------
+# parametrized test function for contains_duplicate
+# -----------------------------------------------
+# Contains Duplicate
+# https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/578/ 
+
+from leetcode_easy import contains_duplicate
+
+contains_duplicate_products = [
+    ([1, 2, 3, 1], True),  # return true if duplicate exists
+    ([1, 2, 3, 4], False)  # return false if no duplicates
+]
+
+@pytest.mark.parametrize('nums, output', contains_duplicate_products)
+def test_contains_duplicate(nums, output):
+    assert contains_duplicate.containsDuplicate(nums) == output
