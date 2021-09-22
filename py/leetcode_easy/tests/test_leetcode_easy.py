@@ -92,3 +92,7 @@ contains_duplicate_products = [
 @pytest.mark.parametrize('nums, output', contains_duplicate_products)
 def test_contains_duplicate(nums, output):
     assert contains_duplicate.containsDuplicate(nums) == output
+
+@pytest.mark.parametrize('nums, output', contains_duplicate_products)
+def test_contains_duplicate_iterative(nums, output):
+    assert contains_duplicate.containsDuplicateIterativeVersion(nums) == output
