@@ -96,3 +96,21 @@ def test_contains_duplicate(nums, output):
 @pytest.mark.parametrize('nums, output', contains_duplicate_products)
 def test_contains_duplicate_iterative(nums, output):
     assert contains_duplicate.containsDuplicateIterativeVersion(nums) == output
+
+# --------------------------------------------
+# parametrized test function for house_robber
+# --------------------------------------------
+# House Robber
+# https://leetcode.com/explore/interview/card/top-interview-questions-easy/97/dynamic-programming/576/
+
+from leetcode_easy import house_robber
+
+house_robber_products = [
+    ([1, 2, 3, 1], 4),
+    ([2, 7, 9, 3, 1], 12),
+    ([], 0)
+]
+
+@pytest.mark.parametrize('nums, output', house_robber_products)
+def test_contains_duplicate(nums, output):
+    assert house_robber.rob(nums) == output
