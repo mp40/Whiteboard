@@ -1,4 +1,5 @@
 import pytest
+import unittest
 
 # from leetcode_easy import binary_search, buy_sell_stock, buy_sell_stock_two, climbing_stairs
 # from leetcode_easy import *
@@ -114,3 +115,23 @@ house_robber_products = [
 @pytest.mark.parametrize('nums, output', house_robber_products)
 def test_contains_duplicate(nums, output):
     assert house_robber.rob(nums) == output
+
+# --------------------------------------------
+# parametrized test function for intersection_of_arrays
+# --------------------------------------------
+# Intersection of Two Arrays II
+# https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/
+
+from leetcode_easy import intersection_of_arrays
+
+intersection_of_arrays_products = [
+    ([1, 2, 2, 1], [2, 2], [2, 2]),       # long array compared to short array
+    ([4, 9, 5], [9, 4, 9, 8, 4], [4, 9]), # short array compared to long array
+    ([1, 2, 2, 1], [2], [2]),             # long array compared to array of one number
+    ([1], [1, 2], [1])                    # one number compared to short array
+]
+
+@pytest.mark.parametrize('nums1, nums2, output', intersection_of_arrays_products)
+def test_intersection_of_arrays(nums1, nums2, output):
+    case = unittest.TestCase()
+    case.assertCountEqual(intersection_of_arrays.intersect(nums1, nums2), output)
