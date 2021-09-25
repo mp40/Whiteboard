@@ -135,3 +135,24 @@ intersection_of_arrays_products = [
 def test_intersection_of_arrays(nums1, nums2, output):
     case = unittest.TestCase()
     case.assertCountEqual(intersection_of_arrays.intersect(nums1, nums2), output)
+
+# -----------------------------------------------
+# parametrized test function for last_word_length
+# -----------------------------------------------
+# Length of Last Word 
+# https://leetcode.com/problems/length-of-last-word/
+
+from leetcode_easy import last_word_length
+
+last_word_length_products = [
+    ("Hello World", 5),
+    ("Hello Biggles", 7),
+    ("", 0),
+    ("a ", 1),
+    ("b   a    ", 1),
+    (" ", 0)
+]
+
+@pytest.mark.parametrize('s, output', last_word_length_products)
+def test_last_word_length(s, output):
+    assert last_word_length.lengthOfLastWord(s) == output
