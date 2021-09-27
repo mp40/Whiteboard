@@ -2,7 +2,7 @@ package last_word_length
 
 import "testing"
 
-func TestRob(t *testing.T) {
+func TestLengthOfLastWord(t *testing.T) {
 	assertCorrectValue := func(t testing.TB, got, want int) {
 		t.Helper()
 		if got != want {

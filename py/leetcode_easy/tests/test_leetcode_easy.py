@@ -156,3 +156,26 @@ last_word_length_products = [
 @pytest.mark.parametrize('s, output', last_word_length_products)
 def test_last_word_length(s, output):
     assert last_word_length.lengthOfLastWord(s) == output
+
+# ----------------------------------------------------
+# parametrized test function for longest_common_prefix
+# ----------------------------------------------------
+# Longest Common Prefix 
+# https://leetcode.com/problems/longest-common-prefix/
+
+from leetcode_easy import longest_common_prefix
+
+longest_common_prefix_products = [
+    (["flower", "flow", "flight"], "fl"),
+    (["dog", "racecar", "car"], ""),
+    (["a"], "a"),
+    (["", ""], ""),
+    (["c", "c"], "c"),
+    (["a", "b"], ""),
+    (["aaa", "aa", "aaa"], "aa"),
+    ([], "")
+]
+
+@pytest.mark.parametrize('strs, output', longest_common_prefix_products)
+def test_longest_common_prefix(strs, output):
+    assert longest_common_prefix.longestCommonPrefix(strs) == output
