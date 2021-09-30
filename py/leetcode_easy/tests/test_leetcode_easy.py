@@ -179,3 +179,23 @@ longest_common_prefix_products = [
 @pytest.mark.parametrize('strs, output', longest_common_prefix_products)
 def test_longest_common_prefix(strs, output):
     assert longest_common_prefix.longestCommonPrefix(strs) == output
+
+# -----------------------------------------------
+# parametrized test function for max_sub_array
+# -----------------------------------------------
+# Maximum Subarray
+# https://leetcode.com/problems/maximum-subarray/
+
+from leetcode_easy import max_sub_array
+
+max_sub_array_products = [
+    ([-2, 1, -3, 4, -1, 2, 1, -5, 4], 6),
+    ([1, 2], 3),
+    ([-2, -1], -1),
+    ([-1, -2], -1),
+
+]
+
+@pytest.mark.parametrize('nums, output', max_sub_array_products)
+def test_max_sub_array(nums, output):
+    assert max_sub_array.maxSubArray(nums) == output

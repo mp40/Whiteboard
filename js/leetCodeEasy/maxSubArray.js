@@ -23,7 +23,7 @@ export const maxSubArray = function(nums) {
     for(let i = 1; i < nums.length; i++){
         let currentValue = nums[i]
         // check if the current value is less than current plus previous best
-        if( currentValue < currentValue + previousBest) {
+        if(currentValue < currentValue + previousBest) {
             // if less then new previous best is previous best plus current value
             previousBest = currentValue + previousBest;
         } else {
