@@ -19,7 +19,7 @@ describe('merge orted array', () => {
         merge(nums1, m, nums2, n)
         expect(nums1).toEqual(result);
     })
-    it('should merge two sorted arrays when m an n equals 1', () => {
+    it('should merge two sorted arrays when m and n equals 1', () => {
         const nums1 = [2,0];
         const m = 1;
         const nums2 = [1];

@@ -199,3 +199,23 @@ max_sub_array_products = [
 @pytest.mark.parametrize('nums, output', max_sub_array_products)
 def test_max_sub_array(nums, output):
     assert max_sub_array.maxSubArray(nums) == output
+
+# -------------------------------------------------
+# parametrized test function for merge_sorted_array
+# -------------------------------------------------
+# Merge Sorted Array
+# https://leetcode.com/problems/merge-sorted-array/
+
+from leetcode_easy import merge_sorted_array
+
+merge_sorted_array_products = [
+    ([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3, [1, 2, 2, 3, 5, 6]),  # merge two sorted arrays
+    ([0], 0, [1], 1, [1]),                                      # merge two sorted arrays when m equals 0
+    ([2, 0], 1, [1], 1, [1, 2]),                                # merge two sorted arrays when m and n equals 1
+
+]
+
+@pytest.mark.parametrize('nums1, m, nums2, n, result', merge_sorted_array_products)
+def test_max_sub_array(nums1, m, nums2, n, result):
+    merge_sorted_array.merge(nums1, m, nums2, n)
+    assert nums1 == result
