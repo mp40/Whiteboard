@@ -219,3 +219,24 @@ merge_sorted_array_products = [
 def test_max_sub_array(nums1, m, nums2, n, result):
     merge_sorted_array.merge(nums1, m, nums2, n)
     assert nums1 == result
+
+# -------------------------------------------------
+# parametrized test function for missing_number
+# -------------------------------------------------
+# Missing Number
+# https://leetcode.com/problems/missing-number/
+
+from leetcode_easy import missing_number
+
+missing_number_products = [
+    ([3, 0, 1], 2), 
+    ([9, 6, 4, 2, 3, 5, 7, 0, 1], 8),   
+    ([45,35,38,13,12,23,48,15,44,21,43,26,6,37,1,19,22,3,11,32,4,16,28,49,29,36,33,8,9,39,46,17,41,7,2,5,27,20,40,34,30,25,47,0,31,42,24,10,14], 18),
+    ([0], 1),
+    ([1], 0),
+    ([], 0)
+]
+
+@pytest.mark.parametrize('nums, output', missing_number_products)
+def test_max_sub_array(nums, output):
+    assert missing_number.missingNumber(nums) == output
