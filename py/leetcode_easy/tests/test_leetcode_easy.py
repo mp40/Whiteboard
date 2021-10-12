@@ -240,3 +240,26 @@ missing_number_products = [
 @pytest.mark.parametrize('nums, output', missing_number_products)
 def test_max_sub_array(nums, output):
     assert missing_number.missingNumber(nums) == output
+
+# -------------------------------------------------
+# parametrized test function for move_zeros
+# -------------------------------------------------
+# Move Zeroes
+# https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
+
+
+from leetcode_easy import move_zeros
+
+move_zeros_products = [
+    ([0,1,0,3,12], [1,3,12,0,0]),   # example
+    ([], []),                       # empty lists
+    ([1], [1]),                     # length 1 list with value 1
+    ([0], [0]),                     # length 1 list with value 0
+    ([1,0], [1,0]),                 # length 2 list starting with 1 and ending with 0
+    ([0,1], [1,0])                  # should work on length 2 array starting with 0 and ending with 1
+]
+
+@pytest.mark.parametrize('nums, result', move_zeros_products)
+def test_move_zeros(nums, result):
+    move_zeros.moveZeros(nums)
+    assert nums == result

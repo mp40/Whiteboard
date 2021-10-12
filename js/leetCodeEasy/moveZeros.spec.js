@@ -21,7 +21,7 @@ describe('moveZeros', () => {
         moveZeroes(array);
         expect(array).toEqual([0])
     })
-    it('should work on length 2 array starting with 1 and ending with 2', () => {
+    it('should work on length 2 array starting with 1 and ending with 0', () => {
         const array = [1,0]
         moveZeroes(array);
         expect(array).toEqual([1,0])
