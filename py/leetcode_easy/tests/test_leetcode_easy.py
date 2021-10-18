@@ -263,3 +263,22 @@ move_zeros_products = [
 def test_move_zeros(nums, result):
     move_zeros.moveZeros(nums)
     assert nums == result
+
+# -------------------------------------------------
+# parametrized test function for palindrome_number
+# -------------------------------------------------
+# Palindrome Number
+# https://leetcode.com/problems/palindrome-number/   
+
+from leetcode_easy import palindrome_number
+
+palindrome_number_products = [
+    (121, True), 
+    (10, False),   
+    (-121, False),
+    (11, True)
+]
+
+@pytest.mark.parametrize('x, output', palindrome_number_products)
+def test_palindrome_number(x, output):
+    assert palindrome_number.isPalindrome(x) == output
