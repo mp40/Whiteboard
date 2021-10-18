@@ -282,3 +282,24 @@ palindrome_number_products = [
 @pytest.mark.parametrize('x, output', palindrome_number_products)
 def test_palindrome_number(x, output):
     assert palindrome_number.isPalindrome(x) == output
+
+# -------------------------------------------------
+# parametrized test function for pascals_triangle
+# -------------------------------------------------
+# Pascal's Triangle
+# https://leetcode.com/explore/interview/card/top-interview-questions-easy/99/others/601/ 
+
+from leetcode_easy import pascals_triangle
+
+pascals_triangle_products = [
+    (0, []), 
+    (1, [[1]]),   
+    (2, [[1], [1, 1]]),
+    (3, [[1], [1, 1], [1, 2, 1]]),
+    (4, [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]),
+    (5, [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]])
+]
+
+@pytest.mark.parametrize('numRows, output', pascals_triangle_products)
+def test_palindrome_number(numRows, output):
+    assert pascals_triangle.generate(numRows) == output
