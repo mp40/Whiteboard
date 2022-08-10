@@ -68,4 +68,48 @@ func TestStack(t *testing.T) {
 			t.Errorf("got %v want %v", got, want)
 		}
 	})
+
+	t.Run("IsEmpty returns true if empty", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{}}
+
+		got := stack.IsEmpty()
+		want := true
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
+	t.Run("IsEmpty returns false if not empty", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{1, 2}}
+
+		got := stack.IsEmpty()
+		want := false
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
+	t.Run("IsFull returns true if full", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{1, 2, 3}}
+
+		got := stack.IsFull()
+		want := true
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
+	t.Run("IsFull returns false if not full", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{1, 2}}
+
+		got := stack.IsFull()
+		want := false
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
 }

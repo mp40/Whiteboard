@@ -2,8 +2,6 @@ package stack
 
 // TDD Stack
 // pop -> removes last element
-// isEmpty -> return boolean
-// isFull -> return boolean
 
 type Stack struct {
 	Capacity int
@@ -30,4 +28,25 @@ func (s *Stack) Push(item int) (i int, ok bool) {
 
 func (s *Stack) Peek() (int) {
 	return s.Items[s.GetLength() - 1]
+}
+
+func (s *Stack) IsEmpty() (bool) {
+	length := s.GetLength()
+
+	if(length != 0) {
+		return false;
+	}
+
+	return true;
+}
+
+func (s *Stack) IsFull() (bool) {
+	length := s.GetLength()
+	capacity := s.GetCapacity()
+
+	if(length != capacity) {
+		return false;
+	}
+
+	return true;
 }
