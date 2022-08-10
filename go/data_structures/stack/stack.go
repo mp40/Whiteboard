@@ -17,8 +17,10 @@ func (s *Stack) GetLength() int {
 }
 
 func (s *Stack) Push(item int) (i int, ok bool) {
-	if(s.GetCapacity() == s.GetLength()){
-		return i, false;
+	full := s.IsFull()
+	
+	if(full) {
+		return i, false
 	}
 
 	s.Items = append(s.Items, item)
