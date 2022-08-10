@@ -58,6 +58,18 @@ func TestStack(t *testing.T) {
 		}
 	})
 
+	t.Run("Push does not add element if stack full", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{1, 2, 3}}
+		stack.Push(4)
+
+		got := len(stack.Items)
+		want := 3
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
 	t.Run("Peek returns value of last item", func(t *testing.T) {
 		stack := Stack{Capacity: 3, Items: []int{1, 2}}
 
