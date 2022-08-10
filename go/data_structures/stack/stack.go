@@ -18,10 +18,12 @@ func (s *Stack) GetCapacity() int {
 	return s.Capacity;
 }
 
+func (s *Stack) GetLength() int {
+	return len(s.Items);
+}
+
 func (s *Stack) Push(item int) int {
 	s.Items = append(s.Items, item)
 
-	lastIndex := len(s.Items) - 1
-
-	return s.Items[lastIndex];
+	return s.Items[s.GetLength() - 1];
 }
