@@ -1,9 +1,7 @@
 package stack
 
 // TDD Stack
-// push -> add to end of stack
 // pop -> removes last element
-// peek -> return last element of stack
 // isEmpty -> return boolean
 // isFull -> return boolean
 
@@ -28,4 +26,8 @@ func (s *Stack) Push(item int) (i int, ok bool) {
 	s.Items = append(s.Items, item)
 
 	return s.Items[s.GetLength() - 1], true;
+}
+
+func (s *Stack) Peek() (int) {
+	return s.Items[s.GetLength() - 1]
 }

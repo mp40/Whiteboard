@@ -57,4 +57,15 @@ func TestStack(t *testing.T) {
 			t.Errorf("got %v want %v", got, want)
 		}
 	})
+
+	t.Run("Peek returns value of last item", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{1, 2}}
+
+		got := stack.Peek()
+		want := 2
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
 }
