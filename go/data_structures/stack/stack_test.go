@@ -4,9 +4,9 @@ import "testing"
 
 func TestStack(t *testing.T) {
 
-	t.Run("Stack Length", func(t *testing.T) {
-		stack := Stack{Length: 3, Items: []int{}}
-		got := stack.GetLength()
+	t.Run("Stack Capacity", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{}}
+		got := stack.GetCapacity()
 		want := 3
 
 		if got != want {
@@ -15,7 +15,7 @@ func TestStack(t *testing.T) {
 	})
 
 	t.Run("Push adds element to empty stack", func(t *testing.T) {
-		stack := Stack{Length: 3, Items: []int{}}
+		stack := Stack{Capacity: 3, Items: []int{}}
 		stack.Push(1)
 		got := stack.Items[0]
 		want := 1
@@ -26,7 +26,7 @@ func TestStack(t *testing.T) {
 	})
 
 	t.Run("Push adds element to end of stack", func(t *testing.T) {
-		stack := Stack{Length: 3, Items: []int{1}}
+		stack := Stack{Capacity: 3, Items: []int{1}}
 		stack.Push(2)
 		got := stack.Items[1]
 		want := 2

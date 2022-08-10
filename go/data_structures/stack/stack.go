@@ -10,12 +10,12 @@ package stack
 // isFull -> return boolean
 
 type Stack struct {
-	Length int
+	Capacity int
 	Items []int
 }
 
-func (s *Stack) GetLength() int {
-	return s.Length;
+func (s *Stack) GetCapacity() int {
+	return s.Capacity;
 }
 
 func (s *Stack) Push(item int) int {
