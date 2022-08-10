@@ -1,7 +1,5 @@
 package stack
 
-// import ("fmt")
-
 // TDD Stack
 // push -> add to end of stack
 // pop -> removes last element
@@ -22,8 +20,12 @@ func (s *Stack) GetLength() int {
 	return len(s.Items);
 }
 
-func (s *Stack) Push(item int) int {
+func (s *Stack) Push(item int) (i int, ok bool) {
+	if(s.GetCapacity() == s.GetLength()){
+		return i, false;
+	}
+
 	s.Items = append(s.Items, item)
 
-	return s.Items[s.GetLength() - 1];
+	return s.Items[s.GetLength() - 1], true;
 }

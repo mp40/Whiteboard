@@ -35,4 +35,26 @@ func TestStack(t *testing.T) {
 			t.Errorf("got %v want %v", got, want)
 		}
 	})
+
+	t.Run("Push returns last element of stack", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{1, 2}}
+
+		got, _ := stack.Push(3)
+		want := 3
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
+	t.Run("Push returns false is stack full", func(t *testing.T) {
+		stack := Stack{Capacity: 3, Items: []int{1, 2, 3}}
+
+		_, got := stack.Push(4)
+		want := false
+
+		if got != want {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
 }
