@@ -34,7 +34,20 @@ export class Bottles {
         `${count - 1} bottles of beer on the wall.\n`;
     }
 
-    verses(a, b) {
-        return `${this.verse(a)}\n${this.verse(b)}`
+    verses(start, end) {
+        let result = '';
+        let count = start;
+
+        while(count >= end) {
+            result += this.verse(count)
+            
+            if(count > end) {
+                result += '\n';
+            }
+
+            count--
+        }
+
+        return result
     }
 }
