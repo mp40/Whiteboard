@@ -50,4 +50,8 @@ export class Bottles {
 
         return result
     }
+
+    song() {
+        return this.verses(99, 0)
+    }
 }
