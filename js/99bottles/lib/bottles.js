@@ -28,9 +28,13 @@ export class Bottles {
             '2 bottles of beer on the wall.\n';
         }
 
-        return '99 bottles of beer on the wall, ' +
-        '99 bottles of beer.\n' +
+        return `${count} bottles of beer on the wall, ` +
+        `${count} bottles of beer.\n` +
         'Take one down and pass it around, ' +
-        '98 bottles of beer on the wall.\n';
+        `${count - 1} bottles of beer on the wall.\n`;
+    }
+
+    verses(a, b) {
+        return `${this.verse(a)}\n${this.verse(b)}`
     }
 }
