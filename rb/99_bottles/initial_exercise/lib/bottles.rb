@@ -44,4 +44,8 @@ class Bottles
 
         return song.chomp
     end    
+
+    def song()
+        return verses(99, 0)
+    end    
 end
