@@ -35,6 +35,13 @@ class Bottles
     end
     
     def verses(first, last)
-        return verse(first) + "\n" + verse(last)
+        count = first
+        song = ""
+        while count >= last
+            song = song + verse(count) + "\n"
+            count = count - 1
+        end
+
+        return song.chomp
     end    
 end
