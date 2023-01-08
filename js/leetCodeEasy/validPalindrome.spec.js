@@ -1,4 +1,5 @@
-import { isPalindrome } from './validPalindrome';
+// import { isPalindrome } from './validPalindrome';
+import { isPalindrome } from './validPalindromePractice';
 
 describe('checking  palindrome', () => {
     it('should be correct for first example', () => {
