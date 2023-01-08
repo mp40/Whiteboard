@@ -10,4 +10,8 @@ describe('checking  palindrome', () => {
         const input = "race a car"
         expect(isPalindrome(input)).toBe(false);
     })
+    it('does not treat underscorce as alpha-numeric', () => {
+        const input = "ab_a"
+        expect(isPalindrome(input)).toBe(true);
+    })
 })

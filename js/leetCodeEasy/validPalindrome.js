@@ -19,7 +19,7 @@ Output: false
 
 // this beat 99.19% of runtimes for all other JS submissions
 export const isPalindrome = function(s) {
-    const cleanString = s.replace(/[^\w]/g, "").toLowerCase();
+    const cleanString = s.replace(/[^a-z0-9]/gi, "").toLowerCase();
     let startPointer = 0;
     let endPointer = cleanString.length-1;
 
