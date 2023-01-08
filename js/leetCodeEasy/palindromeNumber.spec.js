@@ -1,4 +1,5 @@
-import {isPalindrome} from './palindromeNumber';
+// import {isPalindrome} from './palindromeNumber';
+import {isPalindrome} from './palindromeNumberPractice';
 
 describe("determine if interger is palindrome", () => {
     it("should return true if valid palindrome", () => {
