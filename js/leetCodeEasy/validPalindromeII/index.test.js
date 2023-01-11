@@ -1,5 +1,5 @@
-// import { validPalindrome } from "./validPalindromeII";
-import { validPalindrome } from "./validPalindromeIIPractice";
+// import { validPalindrome } from ".";
+import { validPalindrome } from "./practice";
 
 describe("detrimine valid palindrome", () => {
   it("should return true for aba", () => {
