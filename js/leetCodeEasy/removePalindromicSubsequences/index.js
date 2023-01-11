@@ -35,4 +35,37 @@ Constraints:
 s[i] is either 'a' or 'b'.
 */
 
-export function removePalindromeSub(s) {}
+/*
+Good explaination of the main thing to take into account
+https://leetcode.com/problems/remove-palindromic-subsequences/solutions/2124240/one-major-observation-java-explanation/
+
+TLDR: 
+Since the string characters are either "a" or "b" AND a subsequence does not have to be contiguous,
+The answer is either 1 or 2
+
+It is either a palindrome or not, 
+if not then remove a palindrome subsequence of all a || b and then the remainder is a palindrome
+
+If string is a palindrome: return 1
+Else return 2
+*/
+
+export function removePalindromeSub(s) {
+  if (s.length < 2) {
+    return s.length;
+  }
+
+  let start = 0;
+  let end = s.length - 1;
+
+  while (start < end) {
+    if (s.charAt(start) !== s.charAt(end)) {
+      return 2;
+    }
+
+    start++;
+    end--;
+  }
+
+  return 1;
+}
