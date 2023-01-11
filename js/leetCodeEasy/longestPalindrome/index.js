@@ -26,6 +26,34 @@ Constraints:
 s consists of lowercase and/or uppercase English letters only.
 */
 
-const longestPalindrome = function(s) {
-    
+export const longestPalindrome = function (s) {
+  if (s.length === 1) {
+    return 1;
+  }
+
+  const map = {};
+  let result = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    const letter = s.charAt(i);
+
+    if (!map[letter]) {
+      map[letter] = 1;
+    } else {
+      map[letter] = map[letter] + 1;
+    }
+
+    if (map[letter] % 2 === 0) {
+      result = result + 2;
+    }
+  }
+
+  for (const k in map) {
+    if (map[k] % 2 === 1) {
+      result++;
+      break;
+    }
+  }
+
+  return result;
 };
