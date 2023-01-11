@@ -23,36 +23,29 @@ Constraints:
 s consists of lowercase English letters.
 */
 
-// passes tests here but times out on leetcode
 export const validPalindrome = function (s) {
   if (s.length === 1) {
     return true;
   }
-
-  const isPalindrome = (str, left, right) => {
-    while (left < right) {
-      if (str.charAt(left) !== str.charAt(right)) {
-        return false;
-      }
-
-      left++;
-      right--;
-    }
-
-    return true;
-  };
 
   let start = 0;
   let end = s.length - 1;
 
   while (start < end) {
     if (s.charAt(start) !== s.charAt(end)) {
-      const a = isPalindrome(s, start + 1, end);
-      const b = isPalindrome(s, start, end - 1);
-
-      if (!a && !b) {
-        return false;
+      if (isPalindrome(s, start + 1, end)) {
+        /*
+        break if true 
+        because if this is true 
+        we don't need to run isPalindrome loop again
+        */
+        break;
       }
+      if (isPalindrome(s, start, end - 1)) {
+        break;
+      }
+
+      return false;
     }
 
     start++;
@@ -61,3 +54,16 @@ export const validPalindrome = function (s) {
 
   return true;
 };
+
+function isPalindrome(str, left, right) {
+  while (left < right) {
+    if (str.charAt(left) !== str.charAt(right)) {
+      return false;
+    }
+
+    left++;
+    right--;
+  }
+
+  return true;
+}
