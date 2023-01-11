@@ -1,4 +1,4 @@
-// import { isPalindrome } from './validPalindrome';
+// import { isPalindrome } from '.';
 import { isPalindrome } from "./practice";
 
 describe("checking  palindrome", () => {

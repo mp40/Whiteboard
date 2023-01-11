@@ -17,6 +17,4 @@ Input: "race a car"
 Output: false
 */
 
-export const isPalindrome = function(s) {
-
-};
+export const isPalindrome = function (s) {};
