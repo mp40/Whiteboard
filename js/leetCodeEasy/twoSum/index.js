@@ -24,15 +24,15 @@ already exists in the table.
 If it exists, we have found a solution and return immediately.
 */
 
-export const twoSum = function(nums, target) {
-    const cache = {};
+export const twoSum = function (nums, target) {
+  const cache = {};
 
-    for(let i = 0; i < nums.length; i++) {
-        const difference = target - nums[i]
-        if(cache[difference] !== undefined){
-            return [cache[difference], i]
-        } else {
-            cache[nums[i]] = i
-        }
-    };
+  for (let i = 0; i < nums.length; i++) {
+    const difference = target - nums[i];
+    if (cache[difference] !== undefined) {
+      return [cache[difference], i];
+    } else {
+      cache[nums[i]] = i;
+    }
+  }
 };
