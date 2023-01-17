@@ -1,11 +1,6 @@
 // Binary Search
 // https://leetcode.com/problems/binary-search/
 
-
-// export const search = (nums, target) => {
-
-// }
-
 /*
 Given a sorted (in ascending order) integer array of n elements and a target value,
 write a function to search target in nums.
@@ -29,32 +24,23 @@ n will be in the range [1, 10000].
 The value of each element in nums will be in the range [-9999, 9999].
 */
 
-/*
-ANSWER BELOW THIS COMMENT BLOCK
--
--
--
--
--
-*/
-
 export const search = (nums, target) => {
-    let left = 0;
-    let right = nums.length - 1;
+  let left = 0;
+  let right = nums.length - 1;
 
-    while(left <= right) {
-        const mid = Math.floor((left + right) / 2)
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
 
-        if(target === nums[mid]) {
-            return mid;
-        }
-
-        if(target < nums[mid]) {
-            right = mid - 1;
-        } else {
-            left = mid + 1;
-        }
+    if (target === nums[mid]) {
+      return mid;
     }
 
-    return -1;
+    if (target < nums[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  return -1;
 };
