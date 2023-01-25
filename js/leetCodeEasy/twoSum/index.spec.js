@@ -1,4 +1,4 @@
-import { twoSum } from ".";
+import { twoSum } from "./practice";
 
 describe("finding the sum of two numbers in array", () => {
   it("should be correct for given example", () => {
