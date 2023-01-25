@@ -1,4 +1,4 @@
-import { firstPalindrome } from ".";
+import { firstPalindrome } from "./practice";
 
 describe("finding first palindrome in array", () => {
   it("should return ada", () => {
