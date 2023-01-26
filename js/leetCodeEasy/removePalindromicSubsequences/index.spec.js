@@ -1,5 +1,5 @@
-import { removePalindromeSub } from ".";
-// import { removePalindromeSub } from "./practice";
+// import { removePalindromeSub } from ".";
+import { removePalindromeSub } from "./practice";
 
 describe("removing palindromic subsequences", () => {
   it("should return 1 for ababa", () => {

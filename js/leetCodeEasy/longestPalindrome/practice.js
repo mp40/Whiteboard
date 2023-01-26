@@ -26,4 +26,4 @@ Constraints:
 s consists of lowercase and/or uppercase English letters only.
 */
 
-const longestPalindrome = function (s) {};
+export const longestPalindrome = function (s) {};
