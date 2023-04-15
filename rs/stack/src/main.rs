@@ -45,7 +45,7 @@ fn test_is_empty() {
 #[test]
 fn test_is_full() {
     let stack = main();
-    assert_eq!(stack.is_full(), false)
+    assert_eq!(stack.is_full(), false);
 }
 
 #[test]
@@ -63,5 +63,12 @@ fn test_push_item() {
 #[test]
 fn test_pop_item() {
     let stack = main();
-    assert_eq!(stack.pop(), 1)
+    assert_eq!(stack.pop(), 1);
+}
+
+#[test]
+fn test_intergration_push_pop() {
+    let stack = main();
+    assert_eq!(stack.push(5), 5);
+    assert_eq!(stack.pop(), 5);
 }
