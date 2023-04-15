@@ -1,5 +1,6 @@
 struct Stack {
-    capacity: u8
+    capacity: u8,
+    items: Vec<i32>
 }
 
 impl Stack {
@@ -10,7 +11,8 @@ impl Stack {
 
 fn main() -> Stack {
    let stack = Stack {
-    capacity: 3
+    capacity: 3,
+    items: Vec::new()
    };
 
    return stack;
@@ -26,4 +28,10 @@ fn test_capacity() {
 fn test_is_empty() {
     let stack = main();
     assert_eq!(stack.is_empty(), true);
+}
+
+#[test]
+fn test_items() {
+    let stack = main();
+    assert_eq!(stack.items.len(), 0);
 }
