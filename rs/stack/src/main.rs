@@ -17,8 +17,8 @@ impl Stack {
         return item;
     }
 
-    fn pop(&self) -> i32 {
-        return 1;
+    fn pop(&mut self) -> i32 {
+        return self.items.pop().unwrap_or(0);
     }
 }
 
@@ -63,7 +63,7 @@ fn test_push_item() {
 
 #[test]
 fn test_pop_item() {
-    let stack = main();
+    let mut stack = main();
     assert_eq!(stack.pop(), 1);
 }
 
