@@ -11,6 +11,10 @@ impl Stack {
     fn is_full(&self) -> bool {
         return false;
     }
+
+    fn push(&self, item:i32) -> i32 {
+        return item;
+    }
 }
 
 fn main() -> Stack {
@@ -44,4 +48,10 @@ fn test_is_full() {
 fn test_items() {
     let stack = main();
     assert_eq!(stack.items.len(), 0);
+}
+
+#[test]
+fn test_push_item() {
+    let stack = main();
+    assert_eq!(stack.push(1), 1)
 }
