@@ -12,7 +12,8 @@ impl Stack {
         return false;
     }
 
-    fn push(&self, item:i32) -> i32 {
+    fn push(&mut self, item:i32) -> i32 {
+        self.items.push(item);
         return item;
     }
 
@@ -56,7 +57,7 @@ fn test_items() {
 
 #[test]
 fn test_push_item() {
-    let stack = main();
+    let mut stack = main();
     assert_eq!(stack.push(1), 1)
 }
 
@@ -68,7 +69,7 @@ fn test_pop_item() {
 
 #[test]
 fn test_intergration_push_pop() {
-    let stack = main();
+    let mut stack = main();
     assert_eq!(stack.push(5), 5);
     assert_eq!(stack.pop(), 5);
 }
