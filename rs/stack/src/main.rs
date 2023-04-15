@@ -15,6 +15,10 @@ impl Stack {
     fn push(&self, item:i32) -> i32 {
         return item;
     }
+
+    fn pop(&self) -> i32 {
+        return 1;
+    }
 }
 
 fn main() -> Stack {
@@ -54,4 +58,10 @@ fn test_items() {
 fn test_push_item() {
     let stack = main();
     assert_eq!(stack.push(1), 1)
+}
+
+#[test]
+fn test_pop_item() {
+    let stack = main();
+    assert_eq!(stack.pop(), 1)
 }
