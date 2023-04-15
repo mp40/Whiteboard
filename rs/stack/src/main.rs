@@ -7,6 +7,10 @@ impl Stack {
     fn is_empty(&self) -> bool {
         return true;
     }
+
+    fn is_full(&self) -> bool {
+        return false;
+    }
 }
 
 fn main() -> Stack {
@@ -28,6 +32,12 @@ fn test_capacity() {
 fn test_is_empty() {
     let stack = main();
     assert_eq!(stack.is_empty(), true);
+}
+
+#[test]
+fn test_is_full() {
+    let stack = main();
+    assert_eq!(stack.is_full(), false)
 }
 
 #[test]
