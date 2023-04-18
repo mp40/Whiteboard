@@ -5,6 +5,9 @@ struct Stack {
 
 impl Stack {
     fn is_empty(&self) -> bool {
+        if self.items.len() > 0 {
+            return false;
+        }
         return true;
     }
 
@@ -17,8 +20,12 @@ impl Stack {
         return item;
     }
 
-    fn pop(&mut self) -> i32 {
-        return self.items.pop().unwrap_or(0);
+    fn pop(&mut self) -> Result<i32, &'static str> {
+        if self.is_empty() {
+            return Err("Empty");
+        }
+
+        return Ok(self.items.pop().unwrap())
     }
 }
 
@@ -62,14 +69,14 @@ fn test_push_item() {
 }
 
 #[test]
-fn test_pop_item() {
+fn test_pop_item_on_empty_list() {
     let mut stack = main();
-    assert_eq!(stack.pop(), 1);
+    assert_eq!(stack.pop(), Err("Empty"));
 }
 
 #[test]
 fn test_intergration_push_pop() {
     let mut stack = main();
     assert_eq!(stack.push(5), 5);
-    assert_eq!(stack.pop(), 5);
+    assert_eq!(stack.pop(), Ok(5));
 }
