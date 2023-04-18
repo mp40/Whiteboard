@@ -12,10 +12,17 @@ impl Stack {
     }
 
     fn is_full(&self) -> bool {
-        return false;
+        if (self.items.len() as u8) < self.capacity {
+            return false;
+        }
+        return true;
     }
 
     fn push(&mut self, item:i32) -> Result<i32, &'static str> {
+        if self.is_full() {
+            return Err("Full")
+        }
+
         self.items.push(item);
         return Ok(item);
     }
