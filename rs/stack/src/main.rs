@@ -80,3 +80,10 @@ fn test_intergration_push_pop() {
     assert_eq!(stack.push(5), Ok(5));
     assert_eq!(stack.pop(), Ok(5));
 }
+
+#[test]
+fn test_intergration_push_to_full_stack() {
+    let mut stack = main();
+    stack.items = vec![1, 2, 3];
+    assert_eq!(stack.push(4), Err("Full"));
+}
