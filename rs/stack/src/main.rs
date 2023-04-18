@@ -34,6 +34,14 @@ impl Stack {
 
         return Ok(self.items.pop().unwrap())
     }
+
+    fn peek(&self) -> Result<i32, &'static str> {
+        if self.is_empty() {
+            return Err("Empty");
+        }
+
+        return Ok(self.items[self.items.len() - 1]);
+    }
 }
 
 fn main() -> Stack {
@@ -83,7 +91,7 @@ fn test_pop_item_on_empty_list() {
 
 #[test]
 fn test_peek_last_item_empty_array() {
-    let mut stack = main();
+    let stack = main();
     assert_eq!(stack.peek(), Err("Empty"));
 }
 
