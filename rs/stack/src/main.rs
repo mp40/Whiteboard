@@ -82,6 +82,20 @@ fn test_pop_item_on_empty_list() {
 }
 
 #[test]
+fn test_peek_last_item_empty_array() {
+    let mut stack = main();
+    assert_eq!(stack.peek(), Err("Empty"));
+}
+
+#[test]
+fn test_peek_last_item_full_array() {
+    let mut stack = main();
+    stack.items = vec![2, 4, 6];
+    assert_eq!(stack.peek(), Ok(6));
+    assert_eq!(stack.items.len(), 3);
+}
+
+#[test]
 fn test_intergration_push_pop() {
     let mut stack = main();
     assert_eq!(stack.push(5), Ok(5));
